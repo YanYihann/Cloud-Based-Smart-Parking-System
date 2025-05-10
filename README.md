@@ -15,15 +15,15 @@ The **Smart Parking System (SPS)** is a web-based platform designed to solve urb
 - Reservation management with placeholder devices
 - Full support for role-based access control          
 
-## Technologies Used
+## Tech used
 
-| Layer       | Technology                           |
-|-------------|---------------------------------------|          
-| Frontend    | HTML, CSS, JavaScript                 |
-| Backend     | PHP 8+                                |
-| Database    | MySQL 8.x                             |
-| Server      | Apache (WAMP/XAMPP/LAMP)              |
-| Modeling    | UML (Use Case, Class, Sequence, etc.) |
+| Layer                | Technology                          |
+|----------------------|--------------------------------------|
+| Frontend             | HTML, CSS, JavaScript                |
+| Backend              | PHP 8+                               |
+| Database             | MySQL 8.x                            |
+| Web Server           | Apache (WAMP / XAMPP or LAMP stack) |
+| Diagrams & Modeling  | PlantUML, Visual Paradigm            |
 
 ## System Structure
 
