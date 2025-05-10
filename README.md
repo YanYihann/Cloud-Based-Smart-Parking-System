@@ -97,14 +97,17 @@ $database = 'CPS3962';
 
 ```
 Cloud-Based-Smart-Parking-System/
-├──Database & php/
-├── config/            # DB connection file
-├── css/               # Stylesheets
-├── pages/             # Main logic files: login, register, main, orders, etc.
-├── database/          # SQL schema              
-├── images/            # Images, icons, etc.    
-├── index.php          # Entry point    
-└── README.md    
+├── Database & php/
+│   ├── assets/
+│   ├── css/                  # Stylesheets
+│   ├── images/               # UI and architecture images
+│   ├── config/               # DB configuration (e.g., db_connect.php)
+│   ├── database/             # SQL schema and sample data
+│   ├── includes/             # Shared PHP scripts (session, helpers)
+│   ├── pages/                # PHP pages (index.php, main.php, payment.php, etc.)
+│   ├── index.php             # Application entry point
+├── Diagrams/                 # UML Diagrams (Use Case, Class, Sequence, etc.)
+└── README.md                 # Project description
 ```
 
 
