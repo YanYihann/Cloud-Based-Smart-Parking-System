@@ -96,7 +96,8 @@ $database = 'CPS3962';
 ## Directory Structure
 
 ```
-Database & php/
+Cloud-Based-Smart-Parking-System/
+├──Database & php/
 ├── config/            # DB connection file
 ├── css/               # Stylesheets
 ├── pages/             # Main logic files: login, register, main, orders, etc.
