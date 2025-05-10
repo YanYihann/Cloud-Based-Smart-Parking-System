@@ -1,4 +1,4 @@
-# Cloud-Based-Smart-Parking-System
+# Cloud-Based Smart Parking System
 
 ## Overview
 
