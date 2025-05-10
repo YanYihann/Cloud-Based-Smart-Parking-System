@@ -89,13 +89,9 @@ $password = '';
 $database = 'CPS3962';
 ```
 
-4. Start server:
-```bash
-php -S localhost:8000
-```
 
-5. Access the system:
-[http://localhost:8000](http://localhost:8000)
+4. Access the system:
+[http://localhost/CPS3962](http://localhost/CPS3962)
 
 ## Directory Structure
 
@@ -110,17 +106,6 @@ Database & php/
 └── README.md    
 ```
 
-## Future Development    
 
-- Native mobile app (Android/iOS)    
-- AI-powered parking prediction    
-- Integration with real LPR cameras    
-- EV charger reservation support    
-- Docker deployment    
-- Admin analytics dashboard    
-
-## License    
-
-This project is licensed under the MIT License.    
 
 
