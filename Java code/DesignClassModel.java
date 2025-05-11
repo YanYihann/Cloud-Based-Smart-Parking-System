@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SmartParkingSystem {
+public class DesignClassModel {
     public abstract class User {
     }
 
