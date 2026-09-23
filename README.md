@@ -1,115 +1,80 @@
+<div align="center">
+
 # Cloud-Based Smart Parking System
 
+PHP/MySQL coursework prototype for parking reservations, spot monitoring, role-based flows, and simulated payment.
+
+[![PHP](https://img.shields.io/badge/PHP-8%2B-777BB4?logo=php&logoColor=white)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.x-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Status](https://img.shields.io/badge/status-academic%20prototype-orange)](#scope-and-limitations)
+
+</div>
 
 ## Overview
 
-The **Smart Parking System (SPS)** is a web-based platform designed to solve urban parking challenges using real-time sensor data, license plate recognition, and QR code-based payment. It supports three user roles: **Member**, **Guest**, and **Admin**, with distinct workflows and functionalities. The project is designed using a comprehensive UML-based methodology and implemented in PHP and MySQL.
+The Smart Parking System (SPS) demonstrates a web-based parking workflow for three roles: members, guests, and administrators. It combines a PHP interface, a MySQL data model, and a complete set of analysis/design artifacts.
 
-## Features          
+## Features
 
-- Member and guest registration and login
-- Real-time parking spot tracking via IoT sensors
-- QR code-based payment system
-- License Plate Recognition (LPR) simulation
-- Admin panel to manage users, spots, and bookings          
-- Reservation management with placeholder devices
-- Full support for role-based access control          
+- Member and guest registration and sign-in flows
+- Parking-space availability and reservation management
+- Administrator views for users, bookings, payments, and spaces
+- License-plate and sensor behavior represented as software simulations
+- QR-code payment flow represented as a prototype
+- UML documentation and database artifacts for the full system design
 
-## Tech used
+## Technology
 
-| Layer                | Technology                          |
-|----------------------|--------------------------------------|
-| Frontend             | HTML, CSS, JavaScript                |
-| Backend              | PHP 8+                               |
-| Database             | MySQL 8.x                            |
-| Web Server           | Apache (WAMP / XAMPP or LAMP stack) |
-| Diagrams & Modeling  | PlantUML, Visual Paradigm            |
+| Layer | Technology |
+| --- | --- |
+| Interface | HTML, CSS, JavaScript |
+| Server | PHP 8+ |
+| Data | MySQL 8.x |
+| Local runtime | Apache through XAMPP, WAMP, or LAMP |
+| Modeling | PlantUML / Visual Paradigm artifacts |
 
-## System Structure
+## Quick start
 
-- **Presentation Layer**: User interface using PHP and HTML forms          
-- **Application Logic Layer**: Booking, payment, authentication logic in PHP
-- **Persistence Layer**: MySQL relational database
+1. Clone the repository into your web server document root.
 
-## UML Diagrams
+   ```bash
+   git clone https://github.com/YanYihann/Cloud-Based-Smart-Parking-System.git
+   cd "Cloud-Based-Smart-Parking-System/Database & php"
+   ```
 
-The system is modeled using 12 UML diagrams:
+2. Create a MySQL database named `CPS3962` and import the SQL file in `Database & php/database/`.
+3. Configure the database connection in `Database & php/config/` for your local environment.
+4. Start Apache and MySQL.
+5. Open the project URL configured by your local server, for example `http://localhost/CPS3962/`.
 
-- Use Case Diagram
-- Class Diagrams (Analysis & Design)
-- Component Diagram
-- Deployment Diagram
-- Object Diagram
-- Activity Diagrams (3)
-- Sequence Diagrams (2)
-- Communication Diagrams (2)
-- State Machine Diagrams (2)
-- Timing Diagram
-- Composite Structure Diagram          
+Never commit real production credentials. Use a dedicated local database account where possible.
 
-## Database
+## Architecture
 
-The system uses four primary tables:          
-
-- **users**: Stores user information, credentials, and roles
-- **bookings**: Records reservations and parking session data
-- **payments**: Tracks payment status and amounts
-- **parking_spots**: Maintains real-time parking spot status
-
-### ER Relationships
-
-- `users.username` → `bookings.username`, `payments.username` (1:N)
-- `bookings.id` → `payments.booking_id` (1:1)
-- `parking_spots.spot_id` → `bookings.spot_id`, `payments.spot_id` (1:N)
-
-### Example
-
-- User "yanyihan" reserved spot "U1-1" and paid via QR code.
-- Guest users are identified by license plate and can pay without registration.
-- Admins can monitor reservations, payments, and spot status.
-
-## How to Deploy
-
-1. Clone the repository:
-```bash
-git clone https://github.com/YanYihann/Cloud-Based-Smart-Parking-System
-cd Database & php
+```mermaid
+flowchart LR
+  U[Member / Guest / Admin] --> P[PHP pages]
+  P --> L[Booking, payment, and access logic]
+  L --> D[(MySQL database)]
+  S[Simulated sensors / LPR] --> L
 ```
 
-2. Set up the database:
-   - Open phpMyAdmin
-   - Create a new database `CPS3962`
-   - Import the provided `Cloud-Based-Smart-Parking-System.sql`
+## Repository map
 
-3. Configure DB in `config/db_connect.php`:
-```php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'CPS3962';
+```text
+Database & php/       PHP application, styles, images, configuration, and SQL
+Diagrams/             UML analysis and design diagrams
+Java code/            Supporting Java coursework artifacts
+Database Structure.pdf
+Report.pdf
 ```
 
+## Scope and limitations
 
-4. Access the system:
-[http://localhost/CPS3962](http://localhost/CPS3962)
+This is an academic prototype. Sensor input, license-plate recognition, and payments are demonstrations rather than production integrations. Before real deployment, add secure secret handling, password hashing review, server-side validation, CSRF protection, payment-provider integration, audit logging, and automated tests.
 
-## Directory Structure
+## License
 
-```
-Cloud-Based-Smart-Parking-System/
-├── Database & php/
-│   ├── assets/
-│   ├── css/                  # Stylesheets
-│   ├── images/               # UI and architecture images
-│   ├── config/               # DB configuration (e.g., db_connect.php)
-│   ├── database/             # SQL schema and sample data
-│   ├── includes/             # Shared PHP scripts (session, helpers)
-│   ├── pages/                # PHP pages (index.php, main.php, payment.php, etc.)
-│   ├── index.php             # Application entry point
-├── Diagrams/                 # UML Diagrams (Use Case, Class, Sequence, etc.)
-└── README.md                 # Project description
-```
-
-
+No license file is currently included. Add one before inviting reuse or contributions.
 
 
